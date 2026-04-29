@@ -13,7 +13,11 @@ Features (per spec):
 Run:
     streamlit run dashboard/app.py
 """
+import os
 
+if not os.path.exists("outputs/results.csv"):
+    import subprocess
+    subprocess.run(["python", "-m", "src.benchmark"])
 from pathlib import Path
 import sys
 
